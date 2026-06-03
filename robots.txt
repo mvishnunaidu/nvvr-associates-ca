@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location — update YOUR-DOMAIN with actual domain
+Sitemap: https://nvvrassociates.in/sitemap.xml
