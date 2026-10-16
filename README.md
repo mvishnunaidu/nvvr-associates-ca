@@ -30,7 +30,7 @@ A premium, highly responsive, and feature-rich single-page web application desig
 - **📱 Fully Responsive Design**: Seamless viewing experience across Mobile, Tablet, and Desktop screens.
 - **🎠 Interactive Hero Slider**: Dynamic transition showcasing key services (Taxation, Auditing, Advisory) with micro-animations.
 - **📊 Services & Compliance Sections**: Structured information on Income Tax, GST, Statutory Audits, FEMA, Company Incorporations, and LLP registrations.
-- **👥 Professional Team Showcase**: Displays details of qualified partners (**CA. Mundla Rajasekhar Reddy, ACA** & **CA. N. Venkata Ramana Reddy, FCA**) with direct call/email triggers.
+- **👥 Professional Team Showcase**: Displays details of qualified partners (**CA. Mundla Rajasekhar Reddy** & **CA. N. Venkata Ramana Reddy, FCA**) with direct call/email triggers.
 - **💬 WhatsApp Floating Chat**: Instant connection to CA Rajasekhar via pre-filled WhatsApp API text parameters.
 - **✉️ Dynamic Query Form**: Multi-field inquiry form validating customer requests and generating automated communication links.
 - **📍 Google Maps Integration**: Embedded branch coordinates for direct navigation and improved local "CA near me" SEO rankings.
