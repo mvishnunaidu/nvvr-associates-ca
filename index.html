@@ -291,7 +291,7 @@
 
     .firm-info h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(14px, 4.3vw, 22px);
+      font-size: clamp(18px, 5.3vw, 22px);
       font-weight: 800;
       color: var(--teal2);
       letter-spacing: .2px;
@@ -302,7 +302,7 @@
     }
 
     .firm-info .tag {
-      font-size: clamp(7.5px, 2.1vw, 10px);
+      font-size: clamp(8px, 2.3vw, 10px);
       color: var(--muted);
       letter-spacing: 1.2px;
       text-transform: uppercase;
@@ -964,42 +964,50 @@
 
     .about-highlights {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 11px;
-      margin: 20px 0;
+      grid-template-columns: 1fr;
+      gap: 13px;
+      margin: 22px 0;
     }
 
     .ah-card {
-      background: var(--cream);
-      border-radius: 10px;
-      padding: 14px 12px;
-      border-left: 4px solid var(--gold);
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px 18px;
+      border: 1px solid #eaedf0;
+      border-left: 4.5px solid var(--gold);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .ah-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .07);
     }
 
     .ah-card .ah-icon {
-      font-size: 19px;
+      font-size: 22px;
       color: var(--gold);
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
 
     .ah-card h4 {
-      font-size: 12.5px;
+      font-size: 15px;
       font-weight: 700;
-      color: var(--teal);
-      margin-bottom: 3px;
+      color: var(--teal2);
+      margin-bottom: 4px;
     }
 
     .ah-card p {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--muted);
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .about-btns {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 8px;
+      margin-top: 14px;
     }
 
     .firm-details-bar {
@@ -2140,8 +2148,8 @@
       }
 
       .about-highlights {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
+        grid-template-columns: 1fr;
+        gap: 12px;
       }
 
       .srv-card {
@@ -2159,7 +2167,7 @@
       }
 
       .hdr-logo-img {
-        height: 36px;
+        height: 38px;
       }
 
       .logo-wrap {
@@ -2167,12 +2175,12 @@
       }
 
       .firm-info h1 {
-        font-size: 13.5px;
+        font-size: 15.5px;
       }
 
       .firm-info .tag {
-        font-size: 7px;
-        letter-spacing: 0.8px;
+        font-size: 7.5px;
+        letter-spacing: 0.9px;
       }
 
       .ham-btn {
@@ -2205,6 +2213,7 @@
 
       .about-highlights {
         grid-template-columns: 1fr;
+        gap: 11px;
       }
 
       .srv-card {
@@ -2359,6 +2368,11 @@
 
       .firm-info .reg {
         font-size: 10px;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
       }
 
       .hero {
