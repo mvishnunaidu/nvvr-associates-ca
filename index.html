@@ -242,22 +242,43 @@
 ============================================================ */
     header {
       background: var(--white);
-      position: static;
+      position: relative;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+      z-index: 100;
     }
 
     .hdr-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 0;
+      gap: 8px;
+      padding: 10px 0;
+      min-height: 56px;
     }
 
     /* Logo */
     .logo-wrap {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       min-width: 0;
+      flex: 1;
+    }
+
+    .logo-ca-badge {
+      background: transparent !important;
+      padding: 0 !important;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .hdr-logo-img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      transition: height 0.2s ease;
     }
 
     .firm-info {
@@ -265,32 +286,36 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      overflow: hidden;
     }
 
     .firm-info h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 22px;
+      font-size: clamp(14px, 4.3vw, 22px);
       font-weight: 800;
       color: var(--teal2);
-      letter-spacing: .3px;
-      line-height: 1.1;
+      letter-spacing: .2px;
+      line-height: 1.15;
       white-space: nowrap;
+      text-overflow: ellipsis;
+      margin: 0;
     }
 
     .firm-info .tag {
-      font-size: 10px;
+      font-size: clamp(7.5px, 2.1vw, 10px);
       color: var(--muted);
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       margin-top: 2px;
       white-space: nowrap;
+      font-weight: 500;
     }
 
     .firm-info .reg {
-      font-size: 10px;
+      font-size: 9.5px;
       color: var(--teal);
-      margin-top: 2px;
-      letter-spacing: .4px;
+      margin-top: 1px;
+      letter-spacing: .3px;
       white-space: nowrap;
       font-weight: 600;
     }
@@ -336,31 +361,35 @@
       }
 
       .ham-btn {
-        display: none;
+        display: none !important;
       }
     }
 
-    /* Ham button */
+    /* Ham button (3 lines menu) */
     .ham-btn {
-      background: rgba(255, 255, 255, .12);
-      border: 1.5px solid rgba(255, 255, 255, .2);
-      border-radius: 9px;
-      padding: 9px 13px;
+      background: var(--teal);
+      border: none;
+      border-radius: 8px;
+      padding: 8px 10px;
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      gap: 4.5px;
-      transition: background .2s;
+      gap: 4px;
+      transition: all .2s;
       flex-shrink: 0;
+      margin-left: 6px;
+      box-shadow: 0 2px 6px rgba(15, 74, 123, 0.22);
     }
 
-    .ham-btn:hover {
-      background: rgba(255, 255, 255, .2);
+    .ham-btn:hover,
+    .ham-btn:active {
+      background: var(--teal2);
+      transform: scale(0.97);
     }
 
     .ham-btn span {
       display: block;
-      width: 21px;
+      width: 19px;
       height: 2px;
       background: #fff;
       border-radius: 2px;
@@ -500,7 +529,8 @@
 ============================================================ */
     .hero {
       position: relative;
-      height: 420px;
+      height: 400px;
+      min-height: 380px;
       overflow: hidden;
       background: var(--teal2);
     }
@@ -579,7 +609,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 28px 20px;
+      padding: 20px 46px;
       color: #fff;
       z-index: 2;
     }
@@ -588,36 +618,44 @@
       display: inline-block;
       background: linear-gradient(135deg, var(--gold), var(--gold2));
       color: var(--teal2);
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 5px 16px;
+      padding: 4px 14px;
       border-radius: 20px;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     .slide-content h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 28px;
+      font-size: clamp(19px, 5.2vw, 28px);
       font-weight: 800;
-      line-height: 1.22;
-      margin-bottom: 10px;
+      line-height: 1.25;
+      margin-bottom: 8px;
       text-shadow: 0 2px 12px rgba(0, 0, 0, .3);
     }
 
     .slide-content p {
-      font-size: 13px;
+      font-size: clamp(11.5px, 3.2vw, 13px);
       color: rgba(255, 255, 255, .78);
-      margin-bottom: 22px;
-      max-width: 480px;
+      margin-bottom: 18px;
+      max-width: 440px;
+      line-height: 1.5;
     }
 
     .slide-btns {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
       justify-content: center;
+    }
+
+    .slide-btns .btn-primary,
+    .slide-btns .btn-outline {
+      padding: 9px 16px;
+      font-size: 12px;
+      border-radius: 6px;
     }
 
     .sl-prev,
@@ -625,13 +663,13 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255, 255, 255, .12);
+      background: rgba(255, 255, 255, .15);
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, .2);
-      width: 36px;
-      height: 36px;
+      border: 1px solid rgba(255, 255, 255, .25);
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
-      font-size: 12px;
+      font-size: 11px;
       cursor: pointer;
       z-index: 5;
       display: flex;
@@ -642,11 +680,11 @@
     }
 
     .sl-prev {
-      left: 10px;
+      left: 8px;
     }
 
     .sl-next {
-      right: 10px;
+      right: 8px;
     }
 
     .sl-prev:hover,
@@ -2089,15 +2127,182 @@
     }
 
     /* ============================================================
+   RESPONSIVE — MOBILE REFINEMENTS (<640px)
+============================================================ */
+    @media(max-width:480px) {
+      .container {
+        padding: 0 12px;
+      }
+
+      .firm-details-bar {
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .srv-card {
+        padding: 16px 10px;
+      }
+
+      .cform {
+        padding: 20px 14px;
+      }
+    }
+
+    @media(max-width:360px) {
+      .container {
+        padding: 0 10px;
+      }
+
+      .hdr-logo-img {
+        height: 36px;
+      }
+
+      .logo-wrap {
+        gap: 7px;
+      }
+
+      .firm-info h1 {
+        font-size: 13.5px;
+      }
+
+      .firm-info .tag {
+        font-size: 7px;
+        letter-spacing: 0.8px;
+      }
+
+      .ham-btn {
+        padding: 6px 8px;
+        margin-left: 4px;
+      }
+
+      .ham-btn span {
+        width: 17px;
+      }
+
+      .slide-content {
+        padding: 16px 36px;
+      }
+
+      .sl-prev,
+      .sl-next {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+      }
+
+      .sl-prev {
+        left: 4px;
+      }
+
+      .sl-next {
+        right: 4px;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .srv-card {
+        padding: 12px 6px;
+      }
+
+      .srv-card h3 {
+        font-size: 12px;
+      }
+    }
+
+    /* ============================================================
    RESPONSIVE — TABLET (640px+)
 ============================================================ */
     @media(min-width:640px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      .hdr-inner {
+        padding: 12px 0;
+        gap: 14px;
+        min-height: 66px;
+      }
+
+      .hdr-logo-img {
+        height: 50px;
+      }
+
+      .logo-wrap {
+        gap: 14px;
+      }
+
+      .firm-info h1 {
+        font-size: 20px;
+        letter-spacing: .3px;
+      }
+
+      .firm-info .tag {
+        font-size: 9.5px;
+        letter-spacing: 1.5px;
+      }
+
+      .ham-btn {
+        padding: 9px 12px;
+        gap: 4.5px;
+      }
+
+      .ham-btn span {
+        width: 21px;
+      }
+
       .hero {
         height: 480px;
       }
 
+      .slide-content {
+        padding: 32px 64px;
+      }
+
       .slide-content h2 {
         font-size: 36px;
+      }
+
+      .slide-content p {
+        font-size: 14px;
+        margin-bottom: 22px;
+      }
+
+      .slide-tag {
+        font-size: 10px;
+        padding: 5px 16px;
+        margin-bottom: 14px;
+      }
+
+      .slide-btns {
+        gap: 10px;
+      }
+
+      .slide-btns .btn-primary,
+      .slide-btns .btn-outline {
+        padding: 11px 22px;
+        font-size: 13px;
+      }
+
+      .sl-prev,
+      .sl-next {
+        width: 38px;
+        height: 38px;
+        font-size: 13px;
+      }
+
+      .sl-prev {
+        left: 14px;
+      }
+
+      .sl-next {
+        right: 14px;
       }
 
       .about-grid {
@@ -2136,7 +2341,12 @@
       }
 
       .hdr-inner {
-        padding: 12px 24px;
+        padding: 14px 0;
+        min-height: 76px;
+      }
+
+      .hdr-logo-img {
+        height: 56px;
       }
 
       .firm-info h1 {
@@ -2153,6 +2363,10 @@
 
       .hero {
         height: 520px;
+      }
+
+      .slide-content {
+        padding: 40px 80px;
       }
 
       .slide-content h2 {
@@ -2192,15 +2406,15 @@
     <div class="container">
       <div class="hdr-inner">
         <div class="logo-wrap">
-          <div class="ca-badge" style="background:transparent; padding:0;">
-            <img src="logo.png" alt="CA India Logo" style="height:56px; width:auto; object-fit:contain;">
+          <div class="ca-badge logo-ca-badge">
+            <img src="logo.png" alt="CA India Logo" class="hdr-logo-img">
           </div>
           <div class="firm-info">
             <h1>N V R R &amp; ASSOCIATES</h1>
             <div class="tag">— CHARTERED ACCOUNTANTS —</div>
           </div>
         </div>
-        <button class="ham-btn" onclick="openNav()" aria-label="Open Menu" style="background:var(--teal); border:none;">
+        <button class="ham-btn" onclick="openNav()" aria-label="Open Menu">
           <span></span><span></span><span></span>
         </button>
       </div>
