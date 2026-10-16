@@ -970,50 +970,62 @@
 
     .about-highlights {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 13px;
-      margin: 22px 0;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 18px 0;
     }
 
     .ah-card {
       background: var(--white);
-      border-radius: 12px;
-      padding: 16px 18px;
+      border-radius: 10px;
+      padding: 12px 10px;
       border: 1px solid #eaedf0;
-      border-left: 4.5px solid var(--gold);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+      border-left: 3.5px solid var(--gold);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .03);
       transition: transform .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     .ah-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, .07);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
     }
 
     .ah-card .ah-icon {
-      font-size: 22px;
+      font-size: 17px;
       color: var(--gold);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+      line-height: 1;
     }
 
     .ah-card h4 {
-      font-size: 15px;
+      font-size: clamp(12px, 3.3vw, 13.5px);
       font-weight: 700;
       color: var(--teal2);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
+      line-height: 1.25;
     }
 
     .ah-card p {
-      font-size: 13px;
+      font-size: clamp(9.5px, 2.6vw, 11px);
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.35;
     }
 
     .about-btns {
       display: flex;
-      gap: 12px;
+      gap: 8px;
       flex-wrap: wrap;
       margin-top: 14px;
+    }
+
+    .about-btns .btn-secondary,
+    .about-btns .btn-outline {
+      padding: 9px 15px;
+      font-size: 12px;
+      border-radius: 7px;
     }
 
     .firm-details-bar {
@@ -1947,16 +1959,20 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 26px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px 10px;
       margin-bottom: 26px;
     }
 
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+
     .footer-brand p {
-      font-size: 12.5px;
+      font-size: 12px;
       color: rgba(255, 255, 255, .6);
-      line-height: 1.8;
-      margin: 13px 0 16px;
+      line-height: 1.7;
+      margin: 11px 0 14px;
     }
 
     .footer-logo {
@@ -1992,8 +2008,8 @@
     }
 
     .footer-social a {
-      width: 35px;
-      height: 35px;
+      width: 34px;
+      height: 34px;
       background: rgba(255, 255, 255, .08);
       border-radius: 8px;
       display: flex;
@@ -2010,27 +2026,30 @@
     }
 
     .footer-col h4 {
-      font-size: 11px;
+      font-size: clamp(10px, 2.7vw, 11px);
       font-weight: 700;
       color: var(--gold2);
-      letter-spacing: 1.2px;
+      letter-spacing: .8px;
       text-transform: uppercase;
-      margin-bottom: 13px;
-      padding-bottom: 7px;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
       border-bottom: 1px solid rgba(255, 255, 255, .08);
+      white-space: nowrap;
     }
 
     .footer-col ul li {
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .footer-col ul li a {
-      font-size: 12.5px;
-      color: rgba(255, 255, 255, .62);
+      font-size: clamp(9.5px, 2.6vw, 12px);
+      color: rgba(255, 255, 255, .68);
       transition: color .2s;
       display: flex;
-      align-items: center;
-      gap: 6px;
+      align-items: flex-start;
+      gap: 4px;
+      line-height: 1.35;
+      word-break: break-word;
     }
 
     .footer-col ul li a:hover {
@@ -2040,6 +2059,12 @@
     .footer-col ul li a::before {
       content: '›';
       color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .footer-col ul li a i {
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
     .footer-bottom {
@@ -2154,8 +2179,20 @@
       }
 
       .about-highlights {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .ah-card {
+        padding: 10px 8px;
+      }
+
+      .ah-card h4 {
+        font-size: 12px;
+      }
+
+      .ah-card p {
+        font-size: 9.5px;
       }
 
       .srv-card {
@@ -2218,8 +2255,28 @@
       }
 
       .about-highlights {
-        grid-template-columns: 1fr;
-        gap: 11px;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+
+      .ah-card {
+        padding: 8px 6px;
+      }
+
+      .ah-card .ah-icon {
+        font-size: 14px;
+      }
+
+      .ah-card h4 {
+        font-size: 11px;
+      }
+
+      .ah-card p {
+        font-size: 8.5px;
+      }
+
+      .footer-grid {
+        gap: 16px 6px;
       }
 
       .srv-card {
@@ -2379,6 +2436,62 @@
       .about-highlights {
         grid-template-columns: 1fr 1fr;
         gap: 14px;
+      }
+
+      .ah-card {
+        padding: 16px 18px;
+        border-radius: 12px;
+        border-left-width: 4.5px;
+      }
+
+      .ah-card .ah-icon {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+
+      .ah-card h4 {
+        font-size: 15px;
+        margin-bottom: 4px;
+      }
+
+      .ah-card p {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .about-btns {
+        gap: 12px;
+      }
+
+      .about-btns .btn-secondary,
+      .about-btns .btn-outline {
+        padding: 11px 24px;
+        font-size: 13px;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 26px;
+      }
+
+      .footer-col h4 {
+        font-size: 11px;
+        letter-spacing: 1.2px;
+        margin-bottom: 13px;
+        padding-bottom: 7px;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 8px;
+      }
+
+      .footer-col ul li a {
+        font-size: 12.5px;
+        gap: 6px;
       }
 
       .hero {
